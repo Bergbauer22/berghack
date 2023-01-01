@@ -35,6 +35,15 @@ public class HackMenuScreen extends Screen {
             return Text.literal("Flying: OFF");
         }
     }
+    Text nofalldm(){
+        if(ExampleMod.noFallDamage){
+            return Text.literal("NoFallDamage: ON");
+
+        }
+        else{
+            return Text.literal("NoFallDamage: OFF");
+        }
+    }
     private void setNormalColor() {
         setXColor(0xffffff);
         setYColor(0xffffff);
@@ -76,6 +85,10 @@ public class HackMenuScreen extends Screen {
         this.addDrawableChild(new ButtonWidget(this.width / 2 + 25, this.height /2 +100, 135, 20,   flying(), b -> {
             ExampleMod.flyingEnabled = !ExampleMod.flyingEnabled;
             b.setMessage(flying());
+        }));
+        this.addDrawableChild(new ButtonWidget(this.width / 2 + -160, this.height /2 +100, 135, 20,   nofalldm(), b -> {
+            ExampleMod.noFallDamage = !ExampleMod.noFallDamage;
+            b.setMessage(nofalldm());
         }));
     }
 }

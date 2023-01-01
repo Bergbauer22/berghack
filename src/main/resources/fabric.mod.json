@@ -35,4 +35,5 @@
   "suggests": {
     "another-mod": "*"
   }
+
 }
